@@ -111,17 +111,17 @@
                         <form action="" name="landform" onsubmit="return land()">
                             <div class="form-m">
                                 <input type="text" placeholder="Name*" name="name" onkeyup="land()"
-                                    style="color: #000;">
+                                    style="color: #000;" required>
                                 <span id="error1" style="color: red; font-size: 14px;"></span>
                             </div>
                             <div class="form-m">
                                 <input type="text" placeholder="Email*" name="email" onkeyup="land()"
-                                    style="color: #000;">
+                                    style="color: #000;" required>
                                 <span id="error2" style="color: red; font-size: 14px;"></span>
                             </div>
                             <div class="form-m">
                                 <input type="text" placeholder="Number*" name="number" onkeyup="land()"
-                                    style="color: #000;">
+                                    style="color: #000;" required>
                                 <span id="error3" style="color: red; font-size: 14px;"></span>
                             </div>
                             <textarea cols="30" rows="7" name="textarea">Message</textarea>
@@ -249,54 +249,6 @@
                 }
             })
 
-            function land() {
-                var x = document.landform.name.value;
-                var y = document.landform.email.value;
-                var z = document.landform.number.value;
-
-                var regname = /^[a-zA-Z ]{3,16}$/;
-                var regmail = /^[a-zA-Z0-9._]{3,}[@][a-zA-Z]{5}[.][a-zA-Z]{2,3}$/;
-                var regnumber = /^[0-9]{10}$/;
-
-                if (regname.test(x)) {
-                    if (x[0] === " ") {
-                        document.getElementById("error1").innerHTML = "can't take space";
-                        return false;
-                    } else {
-                        document.getElementById("error1").innerHTML = "";
-                    }
-                } else {
-                    document.getElementById("error1").innerHTML = "please enter valid name";
-                }
-
-                // if (x == null || x == "" || x == " ") {
-                //     document.getElementById("error1").innerHTML = "this field is required";
-                //     return false;
-                // } else if (!isNaN(x)) {
-                //     document.getElementById("error1").innerHTML = "only character are allowed";
-                //     return false;
-                // } else if (x.length <= 2) {
-                //     document.getElementById("error1").innerHTML = " character must be atleast 3 character";
-                //     return false;
-                // } else {
-                //     document.getElementById("error1").innerHTML = "sucessfull";
-                // }
-
-                if (regmail.test(y)) {
-                    document.getElementById("error2").innerHTML = "";
-                } else {
-                    document.getElementById("error2").innerHTML = "enter valid email";
-                    return false;
-                }
-
-                if (regnumber.test(z)) {
-                    document.getElementById("error3").innerHTML = "";
-                } else {
-                    document.getElementById("error3").innerHTML = "enter valid number";
-                    return false;
-                }
-
-            }
 
         </script>
     </body>
